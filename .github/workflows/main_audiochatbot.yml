@@ -20,9 +20,9 @@ jobs:
       - name: Install portaudio19-dev
         run: |
           sudo apt-get update
-          sudo apt-get install -y python3.10.8-dev
+          sudo apt-get install -y python3-dev
           sudo apt-get install -y portaudio19-dev
-          
+          sudo apt install python3-pyaudio
 
       - name: Set up Python version
         uses: actions/setup-python@v1
