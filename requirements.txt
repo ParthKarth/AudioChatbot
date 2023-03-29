@@ -7,7 +7,7 @@ pywebio
 gunicorn
 SpeechRecognition
 pyttsx3
-pyaudio
+#pyaudio
 azure.cognitiveservices.speech
 requests
 # aiohttp==3.8.4
