@@ -471,7 +471,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.http:
-        start_http_server(main, port=args.port)
+        start_http_server(main, port=args.port, default = 8080)
     else:
         # Since some cloud server may close idle connections (such as heroku),
         # use `websocket_ping_interval` to  keep the connection alive
