@@ -1,1 +1,1 @@
-web: python botwithaudio.py --port=$PORT
+web: gunicorn app:botwithaudio
