@@ -40,8 +40,8 @@ import azure.cognitiveservices.speech as speechsdk
 #@app.route("/")
 def main():
     sr=speech_recognition.Recognizer()
-    #api_Key=os.getenv("api_Key")
-    api_Key="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"
+    api_Key=os.getenv("api_Key")
+    
     
 
     def speechToText():
@@ -78,7 +78,7 @@ def main():
         
     def textToSpeech(msg):
         speech_key=os.getenv("speech_key")
-        speech_key = "f35037c5dff94275805e9e241a0f7c60"
+        
         service_region = "centralus"
         speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
         # Note: the voice setting will not overwrite the voice element in input SSML.
@@ -89,7 +89,8 @@ def main():
         speech_synthesizer.speak_text_async(text).get()
     
     def textToSpeech_agent(msg):
-        speech_key = "f35037c5dff94275805e9e241a0f7c60"
+        speech_key=os.getenv("speech_key")
+        
         service_region = "centralus"
         speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
         # Note: the voice setting will not overwrite the voice element in input SSML.
