@@ -466,7 +466,7 @@ if __name__ == "__main__":
     from pywebio import start_server as start_ws_server
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("-p", "--port", type=int, default=8050)
+    parser.add_argument("-p", "--port", type=int)
     parser.add_argument("--http", action="store_true", default=False, help='Whether to enable http protocol for communicates')
     args = parser.parse_args()
 
