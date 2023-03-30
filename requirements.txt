@@ -1,5 +1,6 @@
 git+https://github.com/hwchase17/langchain.git
 #streamlit==1.18.1
+Flask
 numpy==1.22.3
 openai==0.26.5
 OpenAI
