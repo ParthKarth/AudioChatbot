@@ -37,8 +37,9 @@ from flask import Flask
 #     r=llm_chain.predict(question=questions)
 #     return(r)
 
-app=Flask(__name__)
+
 #@app.route("/")
+app=Flask(__name__)
 def main():
     sr=speech_recognition.Recognizer()
     api_Key=os.getenv("api_Key")
@@ -462,6 +463,7 @@ Scenario: Lets do a quick role play for a customer who has enquiries about refun
 
 
 if __name__ == "__main__":
+    app.run()
     import argparse
     from pywebio import platform
     #from pywebio.platform.tornado_http import start_server as start_http_server
