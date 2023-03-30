@@ -1,1 +1,1 @@
-web: gunicorn app:botwithaudio
+gunicorn botwithaudio
