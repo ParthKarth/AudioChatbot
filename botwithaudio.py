@@ -476,9 +476,9 @@ if __name__ == "__main__":
 
     if args.http:
         #start_http_server(main, port=args.port, default = 8000)
-        start_server(main, port=int(os.environ.get('PORT', 8000)), debug=True)
+        start_server(main, port=int(os.environ.get('PORT', 5000)), debug=True)
     else:
         # Since some cloud server may close idle connections (such as heroku),
         # use `websocket_ping_interval` to  keep the connection alive
         #start_ws_server(main, port=args.port, websocket_ping_interval=30)
-        start_server(main, port=int(os.environ.get('PORT', 8000)), websocket_ping_interval=30)
+        start_server(main, port=int(os.environ.get('PORT', 5000)), websocket_ping_interval=30)
