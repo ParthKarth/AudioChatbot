@@ -15,6 +15,7 @@ from pydub import AudioSegment
 from pydub.playback import play
 import io
 import azure.cognitiveservices.speech as speechsdk
+from flask import Flask
 #from pywebio.input import *
 #from pywebio.output import *
 
@@ -36,7 +37,7 @@ import azure.cognitiveservices.speech as speechsdk
 #     r=llm_chain.predict(question=questions)
 #     return(r)
 
-
+app=Flask(__name__)
 #@app.route("/")
 def main():
     sr=speech_recognition.Recognizer()
