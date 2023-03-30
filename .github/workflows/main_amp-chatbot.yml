@@ -65,5 +65,4 @@ jobs:
         id: deploy-to-webapp
         with:
           app-name: 'amp-chatbot'
-          slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1B84EF031036464EA2545101365E8991 }}
