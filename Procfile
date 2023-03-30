@@ -1,1 +1,1 @@
-python botwithaudio.py
+gunicorn --bind=0.0.0.0 botwithaudio:app
