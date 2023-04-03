@@ -42,8 +42,8 @@ from flask import Flask
 app=Flask(__name__)
 def main():
     sr=speech_recognition.Recognizer()
+
     api_Key=os.getenv("api_Key")
-    
     
 
     def speechToText():
@@ -463,7 +463,6 @@ Scenario: Lets do a quick role play for a customer who has enquiries about refun
 
 
 if __name__ == "__main__":
-    app.run()
     import argparse
     from pywebio import platform
     #from pywebio.platform.tornado_http import start_server as start_http_server
@@ -473,15 +472,15 @@ if __name__ == "__main__":
     app = platform.flask.app
     
     parser = argparse.ArgumentParser()
-    parser.add_argument("-p", "--port", type=int)
+    parser.add_argument("-p", "--port", type=int,default=8000)
     parser.add_argument("--http", action="store_true", default=False, help='Whether to enable http protocol for communicates')
     args = parser.parse_args()
 
     if args.http:
         #start_http_server(main, port=args.port, default = 8000)
-        start_server(main, port=int(os.environ.get('PORT', 5000)), debug=True)
+        start_server(main, port=args.port, debug=True)
     else:
         # Since some cloud server may close idle connections (such as heroku),
         # use `websocket_ping_interval` to  keep the connection alive
         #start_ws_server(main, port=args.port, websocket_ping_interval=30)
-        start_server(main, port=int(os.environ.get('PORT', 5000)), websocket_ping_interval=30)
+        start_server(main, port=args.port, websocket_ping_interval=30)
